@@ -1,32 +1,231 @@
 <!DOCTYPE html>
-<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starlex Bolen | Cyber Explorer</title>
+    <style>
+        body {
+    font-family:  'Orbitron', sans-serif;
+    background-color: #0f0f0f;
+    color: #00ffcc;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color:  #1c1c1c;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    background: repeating-linear-gradient(
+        90deg,
+        #0f0f0f,
+        #0f0f0f 10px,
+        #111 10px,
+        #111 20px
+    );
+    padding: 20px;
+    text-align: 2px dashed #ff0066;
+    margin: 0;
+    font-size: 2.5em;
+}
+h1 {
+    animation: glitch 0.6s infinite;
+}
+h1 :hover {
+    color: #00ffcc;
+    transition: color 0.6s ease, text-shadow 0.6s ease;
+}
+h1 :hover {
+    animation: fluxColor 3s infinite;
+    text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
+}
+nav {
+    margin-top: 10px;
+    
+}
+nav a {
+    color: #00ffcc;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+nav a[href="#about"] :hover {
+    color: red;
+}
+nav a[href="#projects"] :hover {
+    color: #ff69b4;
+}
+nav a[href="#contact"] :hover {
+    color: pink;
+}
+section {
+    padding: 30px;
+}
+.cursor-trail {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #00ffcc;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00ffcc;
+    pointer-events: none;
+    animation: fadeOut 0.6s ease forwards;
+    z-index: 9999;
+}
+a:hover {
+    text-shadow: 0 0 5px #00ffcc;
+}
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px #00ffcc;
+}
+.projects {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.project-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+}
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,255,0,0.2);
+    background-color: #272727;
+    transition: all 0.3s ease-in-out;
+}
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Orbitron', sans-serif;
+}
+form button {
+    background-color: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+    color: #808080;
+}
+.glitch-frames {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+}
+.glitch-frames::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -6px;
+    width: 8px;
+    height: 100px;
+    background: linear-gradient(180deg, #ff00ff, #00ffff, #ff0000, #00ff00);
+    animation: glitchColorBar 1.2s infinite linear;
+    box-shadow: 0 0 10px #00ffcc;
+    z-index: -1;
+    filter: blur(1px);
+}
+@keyframes fluxColor {
+    0% {
+        color: #00ffcc; text-shadow: 0 0 15px #00ffcc;
+    }
+    25% {
+        color: #00ff00; text-shadow: 0 0 15px #00ff00;
+    }
+    50% {
+        color: #0066ff; text-shadow: 0 0 15px #0066ff;
+    }
+    75% {
+        color: #ff00ff; text-shadow: 0 0 15px #ff00ff;
+    }
+    100% {
+        color: #ffcc00; text-shadow: 0 0 15px #ffcc00;
+    }
+}
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 0 red;
+    }
+    50% {
+        text-shadow: -2px 0 cyan;
+    }
+    100% {
+        text-shadow: 2px 0 lime;
+    }
+}
+
+@keyframes glitchColorBar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 5px #00ffcc;
+    }
+    50% {
+        text-shadow: 0 0 15px #00ffcc;
+    }
+    100% {
+        text-shadow: 0 0 5px #00ffcc;
+    }
+    h1 {
+        animation: pulse 2s infinite;
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+@media (max-width: 768px) {
+    .project-card {
+        width: 100%;
+}
+}
+    </style>
+</head>
     <link href="https://fonts.googleapis.com/css2?family=Courier%20Prime&amp;display=swap" rel="stylesheet">
     <meta name="description" content="Cyber portfolio of Starlex Bolen, a Kenyan ICT student exploring cybersecurity and ethical hacking.">
     <meta name="author" content="Starlex Bolen">
     <link rel="icon" href="http://127.0.0.1:5500/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./index_files/stylesheet.css">
-<script src="./index_files/script.js.download"></script></head>
-
 <body>
-    <header>
+<header>
     <h1>Starlex Bolen</h1>
     <nav>
-        <a href="http://127.0.0.1:5500/index.html#about">About</a>
-        <div class="glitch-frame">
+       <div class="glitch-frame">
             <img src="https://files.catbox.moe/c4dvrm.jpg" alt="Starlex Bolen" class="profile-img">
         </div>
-        <a href="http://127.0.0.1:5500/index.html#projects">Projects</a>
-        <a href="http://127.0.0.1:5500/index.html#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 <section id="about">
     <h2>About Me</h2>
-<img src="https://files.catbox.moe/c4dvrm.jpg" alt="Starlex Bolen" class="profile-img">
-<p>Hi, I'm Starlex Bolen - a self taught techie, content script writer, and a digital
+    <p>Hi, I'm Starlex Bolen - a self taught techie, content script writer, and a digital
      hustler. I help people turn phones into income tools through smart hustles, digital skills,
       and a little bit of cyber curiosity. I build, test and teach.</p> 
     <p>A proud Kenyan ICT student with a passion for cybersecurity,
@@ -101,58 +300,68 @@
         <button type="submit">Send</button>
     </form>
 </section>
+<button onclick="alert('Accessing Starlex vault...System breach successful')">TryHack</button>
 
 <footer>
-    <p>© 2025 Starlex Bolen | Built with 💻 + 🔐 | 🇰🇪</p>
-</footer>
+    <footer style="text-align:center
+    center; padding: 20px;
+    color: #0f0;
+    background-color: #111;
+    font-family: monospace;">
+    <p>
+        &lt;/&gt; Access granted! Welcome to my digital playground.
+         #BreakRulesBuildTools // Powered by curiosity & caffeine.
+    </p>
+    </footer>
 <script>
-    document.body.addEventListener("mousemove", function(e)
-{
-    const trail = document.createElement("div"); 
-    trail.className = "cursor-trail";
-    trail.style.left = '${e.pageY}px';
-    trail.style.top = '${e.pageY}px';
-    document.body.appendChild(trail);
-    setTimeout(() => trail.remove(), 600);
-})
-</script>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
+    //  Simple interaction: greet the visitor in the console
+    console.log("Welcome to starlex Bolen's Portfolio Site!");
+
+    /* Hover styles based on link text */
+    /* Hot pink */
+
+    // Example DOM interaction
+    document.addEventListener("DOMContentLoaded", () => {
+        const heading = document.querySelector("h1");
+        heading.style.color = "#e74c3c"; //Give it a bold color punch
+    });
+
+    const errors = [
+        "WARNING: Parrot OS breach detected...",
+        "404: Protocal 'Starlex' not recognized",
+        "WARNINGHackerTooPowerfulError",
+        "Injecting digital hustle payload...",
+        "System override initiated."
+    ];
+
+    let i = 0;
+    function showErrors() {
+        const terminal = document.createElement("div");
+        terminal.style.background = "#000";
+        terminal.style.color = "#0f0"
+        terminal.style.fontFamily = "monospace";
+        terminal.style.padding = "20px";
+        terminal.style.position = "fixed";
+        terminal.style.bottom = "0";
+        terminal.style.left = "0";
+        terminal.style.right = "0";
+        terminal.style.zIndex = "999";
+        document.body.appendChild(terminal);
+        const interval = setInterval(() => {
+            if (i < errors.length) {
+                const line = document.createElement("div");
+                line.textContent = ">" + errors[i];
+            terminal.appendChild(line);
+            i++;
+            } else {
+                clearInterval(interval);
+            }
+        }, 1200);
+
+    }
+    document.addEventListener("DOMContentLoader", showErrors);
+
 </script>
 
-</body></html>
+</body>
+</html>
